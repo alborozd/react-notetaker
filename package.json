@@ -20,7 +20,8 @@
     "babel": "^6.5.2",
     "babel-preset-react": "^6.5.0",
     "react": "^0.14.8",
-    "react-dom": "^0.14.8"
+    "react-dom": "^0.14.8",
+    "react-router": "^2.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.7.4",
