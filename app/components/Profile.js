@@ -2,10 +2,10 @@ var React = require('react');
 var Router = require('react-router');
 var UserProfile = require('./Github/UserProfile');
 var Repos = require('./Github/Repos');
-var Notes = require('./Notes/Notes');
+import Notes from './Notes/Notes';
 var ReactFireMixin = require('reactfire');
 var Firebase = require("firebase");
-var helpers = require("../utils/helpers");
+import helpers from "../utils/helpers";
 
 var Profile = React.createClass({
     mixins: [Router.State, ReactFireMixin],
