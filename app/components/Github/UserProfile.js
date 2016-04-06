@@ -10,7 +10,7 @@ var UserProfiles = React.createClass({
             <div>
                 UserProfiles <br />
                 Username: {this.props.username} <br />
-                Bio: {this.props.bio.name}
+                Bio: {JSON.stringify(this.props.bio)}
             </div>
         )
     }

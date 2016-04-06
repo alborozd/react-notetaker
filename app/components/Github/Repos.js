@@ -10,7 +10,7 @@ var Repos = React.createClass({
             <div>
                 Repos <br />
                 Username: {this.props.username} <br />
-                Bio: {this.props.repos[0]}
+                Bio: {JSON.stringify(this.props.repos)}
             </div>
         )
     }
