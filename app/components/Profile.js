@@ -16,12 +16,11 @@ var Profile = React.createClass({
           repos: []
       }
     },
-    componentDidMount: function() {
-        this.ref = new Firebase("https://shining-torch-4902.firebaseio.com/");
-        var childRef = this.ref.child(this.props.params.username);
+    init: function(username) {
+        var childRef = this.ref.child(username);
         this.bindAsArray(childRef, "notes");
         
-        helpers.getGithubInfo(this.props.params.username)
+         helpers.getGithubInfo(username)
             .then(function(dataObj) {
                this.setState({
                    bio: dataObj.bio,
@@ -29,9 +28,17 @@ var Profile = React.createClass({
                }) 
             }.bind(this));
     },
+    componentDidMount: function() {
+        this.ref = new Firebase("https://shining-torch-4902.firebaseio.com/");       
+        this.init(this.props.params.username);     
+    },
     componentWillUnmount: function() {        
         this.ref.off();
     },
+    componentWillReceiveProps: function(nexProps) {        
+        this.unbind("notes")
+        this.init(nexProps.params.username);
+    },    
     handleAddNote: function(newNote) {        
         this.ref.child(this.props.params.username).push().set(newNote);
     },
