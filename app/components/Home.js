@@ -1,14 +1,13 @@
-var React = require('react');
-var Link = require("react-router").Link;
+import React from 'react';
 
-var Home = React.createClass({
-   render: function() {
+class Home extends React.Component {
+    render() {
        return (
          <h1 className="text-center">            
-            {/*<Link to="profile/me">to me</Link>*/}
+            Search by Github username above
          </h1>  
        );
-   } 
-});
+    }
+};
 
-module.exports = Home;
+export default Home;
